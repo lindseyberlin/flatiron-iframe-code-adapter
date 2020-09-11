@@ -35,11 +35,10 @@ height = st.text_input(label="Provide the desired height, in pixels", value=750)
 st.write("The height should only include the number, so `750` not `750px`.")
 
 if st.button("Submit"):
-    st.write(iframe_raw, width, height, cell_range)
-    test = separate_ids(iframe_raw)
-    st.write(test)
+
     try:
         output = generate_iframe_with_params(iframe_raw, width, height, cell_range)
         st.write(output)
+        
     except:
         st.write("Please check your inputs and try again.")
